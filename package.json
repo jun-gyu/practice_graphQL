@@ -1,0 +1,26 @@
+{
+  "name": "GraphQL",
+  "version": "1.0.0",
+  "description": "movie api graphQL",
+  "main": "index.js",
+  "repository": "https://github.com/jun-gyu/practice_graphQL",
+  "author": "<enskawk1991@gmail.com>",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "@babel/cli": "^7.10.5",
+    "add": "^2.0.6",
+    "babel-env": "^2.4.1",
+    "express": "^4.17.1",
+    "graphql-yoga": "^1.18.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.4",
+    "@babel/node": "^7.10.5",
+    "@babel/preset-env": "^7.11.0",
+    "nodemon": "^2.0.4"
+  },
+  "scripts": {
+    "start": "nodemon @babel/node ./index.js"
+  }
+}
