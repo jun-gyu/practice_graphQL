@@ -1,13 +1,9 @@
-import { getMovieById, getMovies, deleteMovie, addMovie } from "./db.js";
+import { getMovies } from "./db.js";
 
 const resolvers = {
   Query: {
-    movies: () => getMovies(), //항상 함수 또는 객체여야 한다 . 함수일 경우 함수를 실행해줘야함
-    movie: (_, { id }) => getMovieById(id), //첫번째 arg는 현재 obj를 보내는 arg
-  },
-  Mutation: {
-    addMovie: (_, { name, score }) => addMovie(name, score),
-    deleteMovie: (_, { id }) => deleteMovie(id),
+    movies: (_, { limit, rating }) => getMovies(limit, rating), //항상 함수 또는 객체여야 한다 . 함수일 경우 함수를 실행해줘야함
+    //첫번째 arg는 현재 obj를 보내는 arg
   },
 };
 // body parser를 쓸필요도 없고 request response를 쓸필요도없고.... 엄청 간다해지는데..? 서버에서 할게없어.
