@@ -1,8 +1,10 @@
-import { getMovies } from "./db.js";
+import { getMovies, getMovie, getSuggestions } from "./db.js";
 
 const resolvers = {
   Query: {
     movies: (_, { limit, rating }) => getMovies(limit, rating), //항상 함수 또는 객체여야 한다 . 함수일 경우 함수를 실행해줘야함
+    movie: (_, { id }) => getMovie(id),
+    suggestions: (_, { id }) => getSuggestions(id),
     //첫번째 arg는 현재 obj를 보내는 arg
   },
 };
